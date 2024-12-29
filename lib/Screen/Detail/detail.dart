@@ -124,7 +124,7 @@ class DetailScreen extends StatelessWidget {
             value,
             style: const TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 24, // Adjust font size
+              fontSize: 20, // Adjust font size
               color: Colors.black45,
             ),
           ),

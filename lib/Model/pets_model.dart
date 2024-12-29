@@ -162,14 +162,14 @@ List<PetsModel> birds = [
 ];
 List<PetsModel> snakes = [
   PetsModel(
-      name: '',
-      breed: '',
-      image: '',
-      age: "",
-      origin: "",
-      sex: "",
+      name: 'Fahim Hasan Dipu',
+      breed: 'King cobra',
+      image: 'images/dipu.png',
+      age: "24",
+      origin: "Bangladesh",
+      sex: "Mail",
       color: const Color(0xffC1B7B1),
-      description: ""),
+      description: "he king cobra is a species complex of snakes endemic to Asia. With an average of 3.18 to 4 m and a record length of 5.85 m, it is the world's longest venomous snake and among the heaviest. Under the genus Ophiophagus, it is not phylogenetically a true cobra despite its common name and some resemblance."),
   PetsModel(
       name: '',
       breed: '',
