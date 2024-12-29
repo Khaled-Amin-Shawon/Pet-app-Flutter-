@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pet_app/Screen/Home/home_screen.dart';
+import 'package:pet_app/Screen/Splash/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       create: (context) => PetsProvider(),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: PetsHomeScreen(),
+        home: Splashscreen(),
       ),
     );
   }
