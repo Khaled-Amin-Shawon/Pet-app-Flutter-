@@ -15,6 +15,7 @@ class _PetsHomeScreenState extends State<PetsHomeScreen> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     List<List<PetsModel>> categories = [cats, dogs, birds, snakes, other];
     return Scaffold(
       backgroundColor: Colors.white,
@@ -45,6 +46,8 @@ class _PetsHomeScreenState extends State<PetsHomeScreen> {
         ],
       ),
       body: Container(
+        height: double.infinity,
+        width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -101,7 +104,7 @@ class _PetsHomeScreenState extends State<PetsHomeScreen> {
                     ? (Padding(
                         padding: const EdgeInsets.only(left: 22),
                         child: SizedBox(
-                          height: 570,
+                          height: size.height * 0.63,
                           child: ListView.builder(
                               itemCount: categories[selectedIndex].length,
                               itemBuilder: (context, index) {
@@ -130,7 +133,7 @@ class _PetsHomeScreenState extends State<PetsHomeScreen> {
                                                   borderRadius:
                                                       BorderRadius.circular(20),
                                                 ),
-                                                height: 50,
+                                                height: size.height * 0.25,
                                               ),
                                               Padding(
                                                 padding:
@@ -143,11 +146,11 @@ class _PetsHomeScreenState extends State<PetsHomeScreen> {
                                                     borderRadius:
                                                         BorderRadius.circular(20),
                                                   ),
-                                                  height: 230,
+                                                  height: size.height * 0.25,
                                                 ),
                                               ),
                                               SizedBox(
-                                                height: 230,
+                                                height: size.height * 0.25,
                                                 child: Center(
                                                   child: Hero(
                                                     tag: categories[selectedIndex]
@@ -181,7 +184,7 @@ class _PetsHomeScreenState extends State<PetsHomeScreen> {
                                                   bottomRight: Radius.circular(20),
                                                 ),
                                               ),
-                                              height: 150,
+                                              height: size.height * 0.18,
                                               child: Padding(
                                                 padding:
                                                     const EdgeInsets.only(left: 15),
@@ -274,14 +277,14 @@ class _PetsHomeScreenState extends State<PetsHomeScreen> {
                     width: 75,
                     decoration: BoxDecoration(
                       color: selectedIndex == index
-                          ? const Color(0xffFF9166)
-                          : const Color(0xffFF9166).withOpacity(0.1),
+                          ? Colors.blue
+                          : Colors.blue.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(15),
                       boxShadow: [
                         BoxShadow(
                           color: selectedIndex == index
-                              ? const Color(0xffFF9166).withOpacity(0.5)
-                              : Colors.transparent,
+                              ? Colors.white.withOpacity(0.5)
+                              : Colors.white.withOpacity(0.5),
                           blurRadius: 12,
                           spreadRadius: 1,
                         ),
@@ -293,10 +296,8 @@ class _PetsHomeScreenState extends State<PetsHomeScreen> {
                         style: TextStyle(
                           color: selectedIndex == index
                               ? Colors.white
-                              : Colors.amber[900],
-                          fontWeight: selectedIndex == index
-                              ? FontWeight.bold
-                              : FontWeight.normal,
+                              : Colors.black,
+                          fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
                       ),

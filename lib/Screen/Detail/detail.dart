@@ -7,7 +7,8 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size; // Get screen size
+    double screenWidth = MediaQuery.of(context).size.width; // Get screen size
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -26,15 +27,14 @@ class DetailScreen extends StatelessWidget {
                         SizedBox(height: size.height * 0.73), // Adjust height
                         Text(
                           pets.name,
-                          style: const TextStyle(
-                            fontSize: 32, // Adjust font size
+                          style: TextStyle(
+                            fontSize: (screenWidth * 0.08).clamp(12, 32), // Adjust font size
                           ),
                         ),
                         Text(
                           pets.description,
-                          // ignore: prefer_const_constructors
                           style: TextStyle(
-                            fontSize: 16, // Adjust font size
+                            fontSize: (screenWidth * 0.04).clamp(12, 16), // Adjust font size
                             color: Colors.black54,
                           ),
                         ),
@@ -62,11 +62,14 @@ class DetailScreen extends StatelessWidget {
                             child: Hero(
                               tag: pets.image,
                               child: Padding(
-                                padding: const EdgeInsets.only(top: 10), // Adjust height
+                                padding: const EdgeInsets.only(
+                                    top: 10,
+                                    left: 10,
+                                    right: 10), // Adjust height
                                 child: Image.asset(
                                   pets.image,
                                   height: size.height * 0.5, // Adjust height
-                                  fit: BoxFit.cover,
+                                  fit: BoxFit.scaleDown,
                                 ),
                               ),
                             ),
@@ -75,11 +78,14 @@ class DetailScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 30),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                ageSexOrigin(pets.age, "Age", size),
-                                ageSexOrigin(pets.sex, "Sex", size),
-                                ageSexOrigin(pets.origin, "Origin", size),
+                                ageSexOrigin(
+                                    pets.age, "Age", size, screenWidth),
+                                ageSexOrigin(
+                                    pets.sex, "Sex", size, screenWidth),
+                                ageSexOrigin(
+                                    pets.origin, "Origin", size, screenWidth),
                               ],
                             ),
                           ),
@@ -109,7 +115,8 @@ class DetailScreen extends StatelessWidget {
     );
   }
 
-  Container ageSexOrigin(String value, String name, Size size) {
+  Container ageSexOrigin(
+      String value, String name, Size size, double screenWidth) {
     return Container(
       height: size.height * 0.1, // Adjust height
       width: size.width * 0.25, // Adjust width
@@ -122,17 +129,16 @@ class DetailScreen extends StatelessWidget {
         children: [
           Text(
             value,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 20, // Adjust font size
+              fontSize: (screenWidth * 0.04).clamp(12, 32), // Adjust font size
               color: Colors.black45,
             ),
           ),
           Text(
             name,
-            // ignore: prefer_const_constructors
             style: TextStyle(
-              fontSize: 16, // Adjust font size
+              fontSize: (screenWidth * 0.03).clamp(12, 16), // Adjust font size
               color: Colors.black26,
             ),
           )
@@ -141,4 +147,3 @@ class DetailScreen extends StatelessWidget {
     );
   }
 }
-
