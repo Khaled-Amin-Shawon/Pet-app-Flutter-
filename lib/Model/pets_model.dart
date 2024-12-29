@@ -30,7 +30,7 @@ List<PetsModel> cats = [
     age: "1",
     origin: "US",
     sex: "Femail ",
-    color: const Color(0xffC1B7B1),
+    color: const Color.fromARGB(255, 122, 245, 175),
     description:
         "Pets bring joy, companionship, and love into our lives. Whether furry, feathered, or scaled, they offer comfort and loyalty. From playful antics to gentle purrs, they teach us patience and responsibility.",
   ),
@@ -65,7 +65,7 @@ List<PetsModel> dogs = [
     age: " 1",
     origin: "UK",
     sex: "Dog",
-    color: const Color(0xffC1B7B1),
+    color: const Color.fromARGB(255, 220, 188, 112),
     description:
         "Pets bring joy, companionship, and love into our lives. Whether furry, feathered, or scaled, they offer comfort and loyalty. From playful antics to gentle purrs, they teach us patience and responsibility.",
   ),
@@ -122,7 +122,7 @@ List<PetsModel> birds = [
     age: " 1",
     origin: "Nepal",
     sex: "bird",
-    color: const Color(0xffC1B7B1),
+    color: const Color.fromARGB(255, 129, 215, 169),
     description:
         "Pets bring joy, companionship, and love into our lives. Whether furry, feathered, or scaled, they offer comfort and loyalty. From playful antics to gentle purrs, they teach us patience and responsibility.",
   ),
@@ -168,7 +168,7 @@ List<PetsModel> snakes = [
       age: "24",
       origin: "Bangladesh",
       sex: "Mail",
-      color: const Color(0xffC1B7B1),
+      color: const Color.fromARGB(255, 110, 174, 206),
       description: "he king cobra is a species complex of snakes endemic to Asia. With an average of 3.18 to 4 m and a record length of 5.85 m, it is the world's longest venomous snake and among the heaviest. Under the genus Ophiophagus, it is not phylogenetically a true cobra despite its common name and some resemblance."),
   PetsModel(
       name: '',
@@ -178,7 +178,7 @@ List<PetsModel> snakes = [
       origin: "",
       sex: "",
       description: "",
-      color: const Color(0xffC1B7B1)),
+      color: const Color.fromARGB(255, 241, 212, 193)),
 ];
 List<PetsModel> other = [
   PetsModel(
@@ -198,7 +198,7 @@ List<PetsModel> other = [
       origin: "",
       sex: "",
       description: "",
-      color: const Color(0xffC1B7B1)),
+      color: const Color.fromARGB(255, 139, 194, 139)),
 ];
 
 List<String> categoryList = [
